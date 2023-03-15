@@ -2,24 +2,34 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const productos = ['remera', 'pantalon', 'zapatillas'];
+  const ids = [0, 1, 2]
+  const categorias = [
+    {idCategoria: 435,
+    nombreCategoria : 'Verano'
+  }, {
+    idCategoria: 436,
+    nombreCategoria: 'Invierno'
+  }]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <ul>
+          {
+            ids.map(
+              (idProducto) => {
+                <li>
+                  {productos[idProducto]}
+                </li>
+              }
+            )
+          }
+        </ul>
+
+      </div>
     </div>
   );
 }
 
 export default App;
+
